@@ -9,7 +9,6 @@ body{
 
 .flex-row-worldmap{
     display: flex;
-    align-content: justify;
 }
 
 
@@ -72,7 +71,7 @@ body{
 #charts{
     display: flex;
     border: 2px solid rgb(241,241,241);
-    width: 600px;
+    width: 900px;
 }
 
 #charts #years{
