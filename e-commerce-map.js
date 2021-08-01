@@ -50,8 +50,8 @@ Promise.all([
       .style("stroke", "transparent")
   }
 
-  svg.append("g")
-    .selectAll("path")
+  svg.selectAll("path")
+    .append("g")    
     .data(topo.features)
     .join("path")
     .attr("d", d3.geoPath()
