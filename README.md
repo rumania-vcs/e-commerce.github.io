@@ -1,6 +1,5 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/rumania-vcs/e-commerce.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Please this website for the e-commerce application.
+https://rumania-vcs.github.io/e-commerce.github.io/e-commerce-map.html
 
