@@ -50,7 +50,7 @@ Promise.all([
       .style("stroke", "transparent")
   }
 
-  map = svg.append("g")
+  svg.append("g")
     .selectAll("path")
     .data(topo.features)
     .join("path")
