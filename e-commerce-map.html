@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce SALES WORLD MAP</title>
+  <link rel="stylesheet" href="final_viz.css">
+</head>
+<style>
+  .pagination {
+    display: inline-block;
+  }
+
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+  }
+
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+
+  .pagination a:hover:not(.active) {
+    background-color: #ddd;
+  }
+</style>
+
+<body>
+  <div class="pagination">
+    <a href="e-commerce-map.html"> World Map </a>
+    <a href="e-commerce-sale.html"> Sales Figure </a>
+    <a href="e-commerce-quantity.html"> Quantity </a>
+  </div>
+  <div class="flex-row">
+    <div id="title">
+      <h1>
+        E-COMMERCE CUSTOMER PRESENCE
+      </h1>
+    </div>
+  </div>
+  <svg id="my_dataviz" width="500" height="300"></svg>
+
+  <script src="https://d3js.org/d3.v6.js"></script>
+  <script src="./e-commerce-map.js"></script>
+
+</body>
+
+</html>
