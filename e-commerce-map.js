@@ -58,10 +58,7 @@ Promise.all([
       .projection(projection)
     )
     .style("fill", function (d) {
-      console.log(data);
-      console.log(d3.geoPath().projection(projection));
       d.total = data.get(d.id) || 0;
-      console.log(d.total, data)
 
       if (d.total === 0) {
         return "gray";
