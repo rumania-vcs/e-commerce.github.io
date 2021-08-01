@@ -18,7 +18,8 @@ body{
 #charts{
     display: flex;
     border: 2px solid rgb(241,241,241);
-    width: 600px;
+    width: 800px;
+    height: 300px;
 }
 
 #charts #years{
