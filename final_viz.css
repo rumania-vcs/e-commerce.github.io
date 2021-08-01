@@ -7,71 +7,18 @@ body{
     margin-right: 3%;
 }
 
-.flex-row-worldmap{
-    display: flex;
-}
 
-
-
-#title-worldmap{
-    width: 100%;
-}
-
-#title-worldmap h1{
-    font-size: 15px;
-    color: #054086;
-    letter-spacing: 1px;
-    margin-bottom: 1px;
-    word-wrap: break-word;
-}
-
-
-.flex-row{
-    display: flex;
-    align-content: center;
-}
-
-
-
-#title{
-    width: 100%;
-}
 
 #title h1{
     font-size: 20px;
     color: #054086;
-    /* letter-spacing: 0px; */
     margin-bottom: 0px;
-}
-
-#title p{
-    font-size: 15px;
-    font-weight: 500;
-    color: rgb(63,63,63);
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-
-#gen-info{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #054086;
-    color: white;
-    padding: 10px 5px;
-    width: 100px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 100px;
-    letter-spacing: 1px;
-    outline: none;
 }
 
 #charts{
     display: flex;
     border: 2px solid rgb(241,241,241);
-    width: 900px;
+    width: 600px;
 }
 
 #charts #years{

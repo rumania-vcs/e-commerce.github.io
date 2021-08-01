@@ -28,8 +28,6 @@ async function init() {
   d3.select('#years p')
     .text('Yearly Quantity Distribution')
 
-  w = 200;
-  h = 200;
   const yearSvg = d3.select('#years svg').selectAll('rect');
 
   yearSvg.data(yearlyData)
