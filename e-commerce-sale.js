@@ -27,37 +27,80 @@ async function init() {
   });
   console.log(yearlyData);
 
+  w = 300;
+  h = 300;
+  //const yearSvg = d3.select('#years svg').selectAll('rect');
+  const yearSvg = d3.select('#years svg').selectAll('rect').attr("width", w).attr("height", h);
 
   // console.log(e,d)
   d3.select('#years p')
     .text('Yearly Sales Amount')
 
-  w = 200;
-  h = 200;
-  const yearSvg = d3.select('#years svg').selectAll('rect');
+  function yRect(t, d, i) {
+    if (t == 'y') {
+      return document.querySelector('#years svg').clientHeight / 4 * (i + 1);
+    } else {
+      return document.querySelector('#years svg').clientHeight / 6 * (i + 1);
+    }
+
+  }
+
+  function hRect(t, d, i) {
+    if (t == 'y') {
+      return document.querySelector('#years svg').clientHeight / 4 - 5;
+    } else {
+      return document.querySelector('#years svg').clientHeight / 6 - 5;
+    }
+  }
+
+
+  function txtyRect(t, d, i) {
+    if (t == 'y') {
+      return (document.querySelector('#years svg').clientHeight / 4 * (i + 1) +
+        (document.querySelector('#years svg').clientHeight / 4) / 2);
+    } else {
+      return (document.querySelector('#years svg').clientHeight / 6 * (i + 1) +
+        (document.querySelector('#years svg').clientHeight / 6) / 2)
+    }
+  }
+
+  function wRect(t, d, i) {
+    if (t == 'n') {
+      return d / 15000
+    } else {
+      return (d / 15000) + 10
+    }
+
+  }
+
+  function idRect(d, i) {
+    return `${years[i]}`
+  }
+
+  function txtxRect(d, i) {
+    return (d / 15000) + 10
+  }
+
+  function txtRect(d, i) {
+    return `${years[i]} - $${d}`
+  }
+
 
   yearSvg.data(yearlyData)
     .join('rect')
     .attr('x', 0)
-    .attr('y', function (d, i) {
-      return document.querySelector('#years svg').clientHeight / 4 * (i + 1);
-    })
-    .attr('height', function (d, i) {
-      return document.querySelector('#years svg').clientHeight / 4 - 5;
-    })
-    .attr('width', d => d / 15000)
-    .attr('id', (d, i) => `${years[i]}`)
+    .attr('y', function (d, i) { return yRect('y', d, i); })
+    .attr('height', function (d, i) { return hRect('y', d, i); })
+    .attr('width', function (d, i) { return wRect('n', d, i); })
+    .attr('id', function (d, i) { return idRect(d, i); })
     .style('fill', 'rgb(0,0,255)')
     .style('cursor', 'pointer');
 
   yearSvg.data(yearlyData)
     .join('text')
-    .attr('x', d => d / 15000 + 10)
-    .attr('y', (d, i) => {
-      return (document.querySelector('#years svg').clientHeight / 4 * (i + 1) +
-        (document.querySelector('#years svg').clientHeight / 4) / 2)
-    })
-    .text((d, i) => `${years[i]} - $${d}`)
+    .attr('x', function (d, i) { return wRect('y', d, i); })
+    .attr('y', function (d, i) { return txtyRect('y', d, i); })
+    .text(function (d, i) { return txtRect(d, i); })
     .style('font-size', '12')
     .style('font-weight', '500')
     .style('fill', 'gray');
@@ -85,16 +128,10 @@ async function init() {
       quartersSvg.data(quarterlyData)
         .join('rect')
         .attr('x', '0')
-        .attr('y', (d, i) => {
-          return document.querySelector('#years svg').clientHeight / 6 * (i + 1);
-        })
-        .attr('height', (d) => {
-          return document.querySelector('#years svg').clientHeight / 6 - 5;
-        })
-        .attr('width', (d) => {
-          return (d.UnitPrice) / 3000;
-        })
-        .attr('id', d => `${d.quarter}`)
+        .attr('y', function (d, i) { return yRect('n', d, i); })
+        .attr('height', function (d, i) { return hRect('n', d, i); })
+        .attr('width', function (d, i) { return (d.UnitPrice) / 3000; })
+        .attr('id', function (d, i) { return `${d.quarter}`; })
         .style('fill', 'skyblue')
 
 
@@ -102,12 +139,9 @@ async function init() {
         .selectAll('text')
         .data(quarterlyData)
         .join('text')
-        .attr('x', d => (d.UnitPrice) / 3000 + 10)
-        .attr('y', (d, i) => {
-          return (document.querySelector('#years svg').clientHeight / 6 * (i + 1) +
-            (document.querySelector('#years svg').clientHeight / 6) / 2);
-        })
-        .text((d, i) => `${d.quarter} - $${(d.UnitPrice)}`)
+        .attr('x', function (d, i) { return (d.UnitPrice / 3000) + 10; })
+        .attr('y', function (d, i) { return txtyRect('n', d, i); })
+        .text(function (d, i) { return `${d.quarter} - $${(d.UnitPrice)}`; })
         .style('font-size', '12px')
         .style('font-weight', '500')
         .style('fill', 'gray');
