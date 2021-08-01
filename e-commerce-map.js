@@ -4,7 +4,7 @@ const svg = d3.select("svg"),
 
 svg.append("circle").attr("cx", 280).attr("cy", 30).attr("r", 4).style("fill", "blue")
 svg.append("circle").attr("cx", 280).attr("cy", 45).attr("r", 4).style("fill", "gray")
-svg.append("text").attr("x", 290).attr("y", 30).text("Customer Present").style("font-size", "10px").attr("alignment-baseline", "middle")
+svg.append("text").attr("x", 290).attr("y", 30).text("Customer Present [37 Countries]").style("font-size", "10px").attr("alignment-baseline", "middle")
 svg.append("text").attr("x", 290).attr("y", 45).text("Customer Not Present").style("font-size", "10px").attr("alignment-baseline", "middle")
 
 const path = d3.geoPath();
