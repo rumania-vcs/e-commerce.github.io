@@ -9,7 +9,7 @@ svg.append("text").attr("x", 290).attr("y", 45).text("Customer Not Present").sty
 
 const path = d3.geoPath();
 const projection = d3.geoMercator()
-  .scale(70)
+  .scale(80)
   .center([0, 20])
   .translate([200, 220]);
 
